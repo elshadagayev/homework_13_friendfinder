@@ -16,8 +16,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
-app.get("/", function(req, res) {
-	res.render("views/index");
+app.get("/aaa", function(req, res) {
+	res.render("index");
 });
 
 /*var mysql = require("mysql");
