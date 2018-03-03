@@ -13,7 +13,11 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var mysql = require("mysql");
+app.get("/", (req, res) => {
+	res.send("Hello world");
+});
+
+/*var mysql = require("mysql");
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -30,7 +34,7 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
-// Express and MySQL code should go here.
+// Express and MySQL code should go here.*/
 
 app.listen(port, function() {
   console.log("Listening on PORT " + port);
