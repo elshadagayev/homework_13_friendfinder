@@ -16,7 +16,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");*/
 
 
-app.get("/aaa", function(req, res) {
+app.get("/", function(req, res) {
 	res.send("Hello world");
 });
 
