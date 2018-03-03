@@ -4,20 +4,20 @@ const express = require("express");
 const app = express();
 
 // Sets up the Express app to handle data parsing
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.set("port", (process.env.PORT || 5000));
 app.use(express.static(__dirname + "/public"));
 app.set("views", __dirname + "/views");
 
-/*var exphbs = require("express-handlebars");
+var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");*/
+app.set("view engine", "handlebars");
 
 
 app.get("/", function(req, res) {
-	res.send("Hello world");
+	res.render("index");
 });
 
 /*var mysql = require("mysql");
