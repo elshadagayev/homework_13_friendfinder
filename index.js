@@ -1,21 +1,22 @@
-var express = require("express");
-var bodyParser = require("body-parser");
+const express = require("express");
+//var bodyParser = require("body-parser");
 
-var app = express();
-var port = process.env.PORT || 5000;
+const app = express();
 
 // Sets up the Express app to handle data parsing
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(express.static(__dirname + "/app/public"));
-app.set("views", __dirname + "/app/views");
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json());
+app.set("port", (process.env.PORT || 5000));
+app.use(express.static(__dirname + "/public"));
+app.set("views", __dirname + "/views");
 
-var exphbs = require("express-handlebars");
+/*var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.set("view engine", "handlebars");*/
 
-app.get("/", (req, res) => {
+
+app.get("/aaa", function(req, res) {
 	res.send("Hello world");
 });
 
@@ -38,6 +39,6 @@ connection.connect(function(err) {
 
 // Express and MySQL code should go here.*/
 
-app.listen(port, function() {
-  console.log("Listening on PORT " + port);
+app.listen(app.get("port"), function() {
+  console.log("Listening on PORT " + app.get("port"));
 });
