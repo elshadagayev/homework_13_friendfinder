@@ -17,7 +17,7 @@ app.set("view engine", "handlebars");
 
 
 app.get("/", function(req, res) {
-	res.render("index");
+	res.render("views/index");
 });
 
 /*var mysql = require("mysql");
