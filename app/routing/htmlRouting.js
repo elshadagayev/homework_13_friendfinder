@@ -1,7 +1,7 @@
 const questions = require(__dirname + "/../data/questions")
 
 module.exports = function(app) {
-	app.get("/home", function(req, res) {
+	app.get("/home?", function(req, res) {
 		res.render("home")
 	});
 
